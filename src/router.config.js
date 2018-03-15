@@ -9,6 +9,7 @@ export default {
             {path:'/news/:id',component:Msg}
         ]},
         {path:'*',redirect:'/home'}
+        
     ]
 }
 
