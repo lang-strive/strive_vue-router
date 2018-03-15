@@ -27,7 +27,7 @@ const routers =[
 const RouterConfig = {
     mode: 'history',
     base: __dirname,
-    routes: routers
+    routes: routers               //这里是routes
 }
 export default RouterConfig
 
