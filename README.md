@@ -46,10 +46,10 @@ component:home
 ``` bash
 1).  {{ $route.params.id}}
 2).  export default{
-mounted(){
-console.log(this.$route.params.id)
-}
-}
+        mounted(){
+          console.log(this.$route.params.id)
+        }
+     }
 ```
 
 ## vue-router 跳转:
@@ -69,11 +69,11 @@ active-class	绑定一个class高亮
 
 通过js跳转(相当于window.location.href)
 methods:{
-handleClick(){
-this.$router.push('/user/123');
-this.$router.replace('/user/123');
-this.$router.go(-2);
-}
+  handleClick(){
+    this.$router.push('/user/123');
+    this.$router.replace('/user/123');
+    this.$router.go(-2);
+  }
 }
 
 this.$router.push('/user/123');		跳转页面,会写入历史记录
@@ -87,11 +87,11 @@ this.$router.go(-2);				后退两页,里面写页数
 > meta: router存信息
 ``` bash
 {
-path:'/home',
-meta:{	
-title:'首页'
-},
-component:Home
+  path:'/home',
+    meta:{	
+    title:'首页'
+  },
+  component:Home
 }
 ```
 
@@ -117,15 +117,15 @@ next(false)	取消跳转
 > 更改title标题:
 ``` bash
 router.beforeEach((to,from,next)=>{
-window.document.title=to.meta.title;
-next();
+  window.document.title=to.meta.title;
+  next();
 })
 ```
 
 > 返回顶端:
 ``` bash
 router.afterEach((to,from,next)=>{
-window.scrollTo(0,0);
+  window.scrollTo(0,0);
 })
 ```
 
@@ -147,11 +147,11 @@ router.afterEach((to,from,next)=>{
 > 验证:
 ``` bash
 router.beforeEach((to,from,next)=>{
-if(window.localStorage.getItem('token')){
-next();
-}else{
-next('/login');
-}
+  if(window.localStorage.getItem('token')){
+    next();
+  }else{
+    next('/login');
+  }
 })
 ```
 
